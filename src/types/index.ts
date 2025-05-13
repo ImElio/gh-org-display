@@ -3,7 +3,7 @@ export interface Organization {
     name: string
     // Role user in the org
     // Owner, Admin, Member
-    role: string
+    // role: string
     // Number of contrib
     contributions: number
     // URL logo/avatar of the org
