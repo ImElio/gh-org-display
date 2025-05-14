@@ -1,23 +1,27 @@
 {
   "name": "gh-org-display",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node src/api/orgs.ts"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "Generate dynamic SVG badges showing your GitHub organizations and contributions",
+  "main": "dist/api/orgs.js",
   "type": "commonjs",
+  "scripts": {
+  "dev": "ts-node src/api/orgs.ts",
+  "build": "tsc",
+  "start": "node dist/api/orgs.js",
+  "test": "jest --passWithNoTests"
+  },
+  "dependencies": {
+    "@vercel/node": "^5.1.16",
+    "node-fetch": "^3.3.2"
+  },
   "devDependencies": {
+    "@types/jest": "^29.5.14",
     "@types/node": "^22.15.17",
-    "@types/node-fetch": "^2.6.12",
+    "@types/node-fetch": "^3.0.5",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.3.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
-  "dependencies": {
-    "@vercel/node": "^5.1.16"
-  }
+  "license": "MIT"
 }
