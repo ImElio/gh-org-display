@@ -5,19 +5,19 @@
   "main": "dist/api/orgs.js",
   "type": "commonjs",
   "scripts": {
-  "dev": "ts-node src/api/orgs.ts",
-  "build": "tsc",
-  "start": "node dist/api/orgs.js",
-  "test": "jest --passWithNoTests"
+    "dev": "ts-node src/api/orgs.ts",
+    "build": "tsc",
+    "start": "node dist/api/orgs.js",
+    "test": "jest --passWithNoTests"
   },
   "dependencies": {
     "@vercel/node": "^5.1.16",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^2.6.12"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
     "@types/node": "^22.15.17",
-    "@types/node-fetch": "^3.0.5",
+    "@types/node-fetch": "^2.6.12",
     "jest": "^29.7.0",
     "ts-jest": "^29.3.2",
     "ts-node": "^10.9.2",
