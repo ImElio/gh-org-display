@@ -1,5 +1,6 @@
 import fetch from 'node-fetch'
 import { Organization } from '../types'
+import { countContributions } from './contrib.service'
 
 const GITHUB_API_BASE = 'https://api.github.com'
 const TOKEN = process.env.GITHUB_TOKEN
@@ -39,4 +40,15 @@ export async function fetchOrganizations(username: string) {
         contributions: 0, // TODO: Calcolate the real contributions for org
         logoUrl: org.avatar_url 
     }))
+
+  const json = await res.json()
+  // count contributions in parallel
+  const orgs: Organization[] = await Promise.all(
+    json.map(async (org: any) => ({
+      name: org.login,
+      contributions: await countContributions(username, org.login),
+      logoUrl: org.avatar_url,
+    }))
+  )
+  return orgs
 }
