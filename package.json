@@ -13,6 +13,7 @@
   "type": "commonjs",
   "devDependencies": {
     "@types/node": "^22.15.17",
+    "@types/node-fetch": "^2.6.12",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },

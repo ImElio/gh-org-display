@@ -15,7 +15,7 @@ const layoutMap: Record<LayoutType, (orgs: Organization[]) => string> = {
 export function renderSVG(orgs: Organization[], layout: LayoutType): string {
     const renderer = layoutMap[layout]
     if (!renderer) {
-        throw new error('unknow_layout')
+        throw new Error('unknow_layout')
     }
     return renderer(orgs)
 }

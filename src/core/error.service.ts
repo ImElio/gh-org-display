@@ -86,6 +86,18 @@ const errorMap: Record<ErrorCode, () => string> = {
   <text class="body"  x="20" y="60">The layout parameter provided is not supported.</text>
 </svg>
   `,
+  internal_error: () => `
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="100">
+  <style>
+    .bg { fill: #0d1117; }
+    .title { fill: #f85149; font: bold 16px 'Segoe UI', sans-serif; }
+    .body { fill: #c9d1d9; font: 13px 'Segoe UI', sans-serif; }
+  </style>
+  <rect class="bg" width="100%" height="100%" rx="10"/>
+  <text class="title" x="20" y="35">⚠️ Internal Error</text>
+  <text class="body"  x="20" y="60">An unexpected error occurred. Please try again later.</text>
+</svg>
+  `,
 }
 
 export function renderError(code: ErrorCode): string {
